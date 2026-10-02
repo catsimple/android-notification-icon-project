@@ -5047,5 +5047,12 @@
     "color": "#FF6633",
     "overlay": false,
     "contributors": "catsimple"
+  },
+  "com.smjcco.wxpusher": {
+    "label": "WxPusher消息推送平台",
+    "format": "png",
+    "color": "#B300B3",
+    "overlay": false,
+    "contributors": "catsimple"
   }
 }
