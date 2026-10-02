@@ -1,7 +1,7 @@
 /*
  * ANIP - Provides standardized monochrome icon resources for apps and vendor systems that do not conform to the Android standard notification design.
  * Copyright (C) 2019 HighCapable
- * https://github.com/BetterAndroid/android-notification-icon-project
+ * https://github.com/catsimple/android-notification-icon-project
  *
  * Apache License Version 2.0
  *
@@ -43,7 +43,7 @@ data class RemoteSource internal constructor(
     companion object {
 
         /** Official GitHub repository that publishes ANIP resources. */
-        const val GITHUB_OFFICIAL_REPO_SLUG = "BetterAndroid/android-notification-icon-project"
+        const val GITHUB_OFFICIAL_REPO_SLUG = "catsimple/android-notification-icon-project"
 
         private const val RELEASE_MANIFEST_FILE_NAME = "anip-release.json"
         private const val GITHUB_HOST = "https://github.com"

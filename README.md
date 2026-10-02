@@ -1,6 +1,6 @@
 # Android Notification Icon Project
 
-[![GitHub license](https://img.shields.io/github/license/BetterAndroid/android-notification-icon-project?color=blue&style=flat-square)](https://github.com/BetterAndroid/android-notification-icon-project/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/catsimple/android-notification-icon-project?color=blue&style=flat-square)](https://github.com/catsimple/android-notification-icon-project/blob/main/LICENSE)
 [![Telegram](https://img.shields.io/badge/discussion%20dev-Telegram-blue.svg?logo=telegram&style=flat-square)](https://t.me/BetterAndroid_Dev)
 [![QQ](https://img.shields.io/badge/discussion%20dev-QQ-blue.svg?logo=tencent-qq&logoColor=red&style=flat-square)](https://qm.qq.com/cgi-bin/qm/qr?k=Pnsc5RY6N2mBKFjOLPiYldbAbprAU3V7&jump_from=webapi&authKey=X5EsOVzLXt1dRunge8ryTxDRrh9/IiW1Pua75eDLh9RE3KXE+bwXIYF5cWri/9lf)
 
@@ -56,7 +56,7 @@ Use of these names, logos, and brands does not imply endorsement.
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/chart?repos=BetterAndroid/android-notification-icon-project&type=date&legend=top-left&sealed_token=vAndrMBOsVaHmyJBj4lVnvACbMYhogwowucoYRlsii2zY4vcynd7Vk_d-0C57H8DNPlEDH2piE0-DjCoFBwxrs3ebhFsj1G0WNqwKao1lK7XtTVvuBZQow)](https://www.star-history.com/?repos=BetterAndroid%2Fandroid-notification-icon-project&type=date&legend=top-left)
+[![Star History Chart](https://api.star-history.com/chart?repos=catsimple/android-notification-icon-project&type=date&legend=top-left&sealed_token=vAndrMBOsVaHmyJBj4lVnvACbMYhogwowucoYRlsii2zY4vcynd7Vk_d-0C57H8DNPlEDH2piE0-DjCoFBwxrs3ebhFsj1G0WNqwKao1lK7XtTVvuBZQow)](https://www.star-history.com/?repos=BetterAndroid%2Fandroid-notification-icon-project&type=date&legend=top-left)
 
 ## License
 

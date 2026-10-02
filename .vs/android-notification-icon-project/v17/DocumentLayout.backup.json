@@ -1,0 +1,155 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\bundle\\BundleStore.kt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\bundle\\BundleStore.kt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\bundle\\BundleRelease.kt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\bundle\\BundleRelease.kt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\exception\\BundleException.kt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\exception\\BundleException.kt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\cache\\BitmapCache.kt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\cache\\BitmapCache.kt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\androidTest\\java\\com\\highcapable\\anip\\sdk\\AnipInstrumentedTest.kt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:sdk\\anip-sdk\\src\\androidTest\\java\\com\\highcapable\\anip\\sdk\\AnipInstrumentedTest.kt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\config\\AnipConfig.kt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\config\\AnipConfig.kt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\Anip.kt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\Anip.kt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BundleStore.kt",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\bundle\\BundleStore.kt",
+              "RelativeDocumentMoniker": "sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\bundle\\BundleStore.kt",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\bundle\\BundleStore.kt",
+              "RelativeToolTip": "sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\bundle\\BundleStore.kt",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-10-02T10:33:25.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BundleRelease.kt",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\bundle\\BundleRelease.kt",
+              "RelativeDocumentMoniker": "sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\bundle\\BundleRelease.kt",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\bundle\\BundleRelease.kt",
+              "RelativeToolTip": "sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\bundle\\BundleRelease.kt",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-10-02T10:33:25.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BundleException.kt",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\exception\\BundleException.kt",
+              "RelativeDocumentMoniker": "sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\exception\\BundleException.kt",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\exception\\BundleException.kt",
+              "RelativeToolTip": "sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\exception\\BundleException.kt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-10-02T10:33:24.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BitmapCache.kt",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\cache\\BitmapCache.kt",
+              "RelativeDocumentMoniker": "sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\cache\\BitmapCache.kt",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\cache\\BitmapCache.kt",
+              "RelativeToolTip": "sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\internal\\cache\\BitmapCache.kt",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-10-02T10:33:23.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AnipInstrumentedTest.kt",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\androidTest\\java\\com\\highcapable\\anip\\sdk\\AnipInstrumentedTest.kt",
+              "RelativeDocumentMoniker": "sdk\\anip-sdk\\src\\androidTest\\java\\com\\highcapable\\anip\\sdk\\AnipInstrumentedTest.kt",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\androidTest\\java\\com\\highcapable\\anip\\sdk\\AnipInstrumentedTest.kt",
+              "RelativeToolTip": "sdk\\anip-sdk\\src\\androidTest\\java\\com\\highcapable\\anip\\sdk\\AnipInstrumentedTest.kt",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-10-02T10:33:22.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AnipConfig.kt",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\config\\AnipConfig.kt",
+              "RelativeDocumentMoniker": "sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\config\\AnipConfig.kt",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\config\\AnipConfig.kt",
+              "RelativeToolTip": "sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\config\\AnipConfig.kt",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-10-02T10:33:21.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Anip.kt",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\Anip.kt",
+              "RelativeDocumentMoniker": "sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\Anip.kt",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\\u6B6A\u9EA6\u811A\u672C\\xiaocanpro\\android-notification-icon-project\\sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\Anip.kt",
+              "RelativeToolTip": "sdk\\anip-sdk\\src\\main\\java\\com\\highcapable\\anip\\sdk\\Anip.kt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-10-02T10:33:07.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
