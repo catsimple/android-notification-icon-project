@@ -92,14 +92,14 @@ export const configs = {
         }
     },
     github: {
-        repo: 'https://github.com/BetterAndroid/android-notification-icon-project',
-        page: 'https://betterandroid.github.io/android-notification-icon-project',
+        repo: 'https://github.com/catsimple/android-notification-icon-project',
+        page: 'https://catsimple.github.io/android-notification-icon-project',
         branch: 'main',
         sourceDir: 'docs-source/src'
     },
     resources: {
-        raw: 'https://raw.githubusercontent.com/BetterAndroid/android-notification-icon-project/main/icons/',
-        cdn: 'https://cdn.jsdelivr.net/gh/BetterAndroid/android-notification-icon-project@main/icons/'
+        raw: 'https://raw.githubusercontent.com/catsimple/android-notification-icon-project/main/icons/',
+        cdn: 'https://cdn.jsdelivr.net/gh/catsimple/android-notification-icon-project@main/icons/'
     }
 } as const;
 
