@@ -1,0 +1,34 @@
+name: Auto Sync Upstream
+
+on:
+  schedule:
+    # 每天北京时间早上 8:00 (UTC 00:00) 自动检查并同步
+    - cron: '0 0 * * *'
+  workflow_dispatch: # 同时也支持在 GitHub Actions 页面随时手动一键触发
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Git Identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Sync from Upstream
+        run: |
+          # 添加官方上游仓库
+          git remote add upstream https://github.com/BetterAndroid/android-notification-icon-project.git
+          git fetch upstream main
+
+          # 将官方 main 分支合并到你当前的 main 分支
+          # 官方大部分更新是 icons 目录的新增文件，几乎不会与你的修改冲突
+          git merge upstream/main -m "chore: auto-sync updates from upstream"
+
+          # 推送回你自己的仓库
+          git push origin main
