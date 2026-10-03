@@ -4,7 +4,7 @@ on:
   schedule:
     # 每天北京时间早上 8:00 (UTC 00:00) 自动检查并同步
     - cron: '0 0 * * *'
-  workflow_dispatch: # 同时也支持在 GitHub Actions 页面随时手动一键触发
+  workflow_dispatch: # 支持在 GitHub Actions 页面手动点击运行
 
 jobs:
   sync:
@@ -15,20 +15,91 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       - name: Setup Git Identity
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Sync from Upstream
+      - name: Sync from Upstream with Ours Priority
         run: |
-          # 添加官方上游仓库
-          git remote add upstream https://github.com/BetterAndroid/android-notification-icon-project.git
+          # 1. 添加官方上游仓库
+          git remote add upstream https://github.com/BetterAndroid/android-notification-icon-project.git || true
           git fetch upstream main
 
-          # 将官方 main 分支合并到你当前的 main 分支
-          # 官方大部分更新是 icons 目录的新增文件，几乎不会与你的修改冲突
-          git merge upstream/main -m "chore: auto-sync updates from upstream"
+          # 2. 尝试合并上游 main 分支
+          if git merge upstream/main -m "chore: auto-sync updates from upstream"; then
+            echo "Merge completed cleanly with no conflicts."
+          else
+            echo "Conflict detected! Applying 'ours-priority' resolution strategy..."
 
-          # 推送回你自己的仓库
+            # 获取所有发生冲突的文件列表
+            conflicts=$(git diff --name-only --diff-filter=U)
+
+            while IFS= read -r file; do
+              [ -z "$file" ] && continue
+
+              if [[ "$file" == *"manifest.json" ]]; then
+                echo "Smart merging JSON: $file (Our customized entries take priority)"
+                node - << 'EOF' "$file"
+                const fs = require('fs');
+                const { execSync } = require('child_process');
+
+                const targetFile = process.argv[2];
+                // 从 Git 暂存区分别读取 我方版本(:2) 和 上游版本(:3)
+                const oursStr = execSync(`git show :2:"${targetFile}"`).toString();
+                const theirsStr = execSync(`git show :3:"${targetFile}"`).toString();
+
+                let ours = JSON.parse(oursStr);
+                let theirs = JSON.parse(theirsStr);
+
+                let mergedResult;
+
+                if (Array.isArray(ours) && Array.isArray(theirs)) {
+                  // 判断标识包名的字段（通常是 package、id 或 name）
+                  const sample = ours[0] || theirs[0] || {};
+                  const keyProp = ['package', 'packageName', 'pkg', 'id', 'name'].find(k => k in sample) || 'package';
+
+                  const map = new Map();
+                  // 1. 先载入官方上游规则
+                  for (const item of theirs) {
+                    if (item && item[keyProp]) map.set(item[keyProp], item);
+                  }
+                  // 2. 用我方规则覆盖官方（同包名时：我的优化版本绝对优先！）
+                  for (const item of ours) {
+                    if (item && item[keyProp]) map.set(item[keyProp], item);
+                  }
+                  // 按包名字母重新排序，保持清单整洁规范
+                  mergedResult = Array.from(map.values()).sort((a, b) => 
+                    String(a[keyProp] || '').localeCompare(String(b[keyProp] || ''))
+                  );
+                } else if (typeof ours === 'object' && typeof theirs === 'object') {
+                  // 字典对象形式：上游打底，我方覆盖
+                  mergedResult = { ...theirs, ...ours };
+                } else {
+                  // 兜底保留我方
+                  mergedResult = ours;
+                }
+
+                fs.writeFileSync(targetFile, JSON.stringify(mergedResult, null, 2) + '\n');
+EOF
+                git add "$file"
+              else
+                # 对于所有图片文件(svg/png)、前端文档(docs-source)等其他冲突：
+                # 强制采用我方版本 (--ours)，彻底覆盖上游！
+                echo "Resolving conflict by keeping our version for: $file"
+                git checkout --ours -- "$file"
+                git add "$file"
+              fi
+            done <<< "$conflicts"
+
+            # 3. 提交自动合并结果
+            git commit -m "chore: auto-sync from upstream with local priority overrides"
+          fi
+
+          # 4. 推送到你的仓库
           git push origin main
