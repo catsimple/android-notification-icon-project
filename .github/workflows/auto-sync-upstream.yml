@@ -6,7 +6,7 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch: # 支持在 GitHub Actions 页面手动点击运行
 
-# 关键：显式声明写权限，否则 git push 必定报 403 错误
+# 必须显式声明写权限
 permissions:
   contents: write
 
@@ -34,7 +34,7 @@ jobs:
           # 1. 确保在本地 main 分支
           git checkout main || git checkout -b main origin/main
 
-          # 2. 添加官方上游仓库（屏蔽标签干扰）
+          # 2. 添加官方上游仓库
           git remote add upstream https://github.com/BetterAndroid/android-notification-icon-project.git || true
           git fetch upstream main --no-tags
 
@@ -58,79 +58,62 @@ jobs:
 
               if [[ "$file" == *"manifest.json" ]]; then
                 echo "Smart merging JSON: $file"
-                TARGET_FILE="$file" node << 'EOF'
-                const fs = require('fs');
-                const { execSync } = require('child_process');
+                TARGET_FILE="$file" node -e '
+                  const fs = require("fs");
+                  const { execSync } = require("child_process");
+                  const targetFile = process.env.TARGET_FILE;
 
-                const targetFile = process.env.TARGET_FILE;
+                  let ours = null, theirs = null;
+                  try { ours = JSON.parse(execSync(`git show :2:"${targetFile}"`, { maxBuffer: 10 * 1024 * 1024 }).toString()); } catch (e) {}
+                  try { theirs = JSON.parse(execSync(`git show :3:"${targetFile}"`, { maxBuffer: 10 * 1024 * 1024 }).toString()); } catch (e) {}
 
-                let ours = null;
-                let theirs = null;
-                try {
-                  ours = JSON.parse(execSync(`git show :2:"${targetFile}"`, { maxBuffer: 10 * 1024 * 1024 }).toString());
-                } catch (e) {}
+                  let mergedResult;
+                  if (Array.isArray(ours) && Array.isArray(theirs)) {
+                    const sample = (ours && ours[0]) || (theirs && theirs[0]) || {};
+                    const keyProp = ["package", "packageName", "pkg", "id", "name"].find(k => k in sample) || "package";
 
-                try {
-                  theirs = JSON.parse(execSync(`git show :3:"${targetFile}"`, { maxBuffer: 10 * 1024 * 1024 }).toString());
-                } catch (e) {}
+                    const oursMap = new Map();
+                    for (const item of ours) {
+                      if (item && item[keyProp]) oursMap.set(item[keyProp], item);
+                    }
 
-                let mergedResult;
+                    const theirsKeys = new Set();
+                    const list = [];
 
-                if (Array.isArray(ours) && Array.isArray(theirs)) {
-                  // 动态检测包名字段（package / packageName / id / name）
-                  const sample = (ours && ours[0]) || (theirs && theirs[0]) || {};
-                  const keyProp = ['package', 'packageName', 'pkg', 'id', 'name'].find(k => k in sample) || 'package';
-
-                  // 将我方的数据转成 Map，方便快速比对
-                  const oursMap = new Map();
-                  for (const item of ours) {
-                    if (item && item[keyProp]) oursMap.set(item[keyProp], item);
-                  }
-
-                  const theirsKeys = new Set();
-                  const list = [];
-
-                  // 1. 严格按照上游原有的相对顺序排列，最小化未来的 git diff 冲突
-                  for (const item of theirs) {
-                    if (item && item[keyProp]) {
-                      const k = item[keyProp];
-                      theirsKeys.add(k);
-                      if (oursMap.has(k)) {
-                        // 发现两边都有的 App：强制用我方优化过的配置覆盖官方！
-                        list.push(oursMap.get(k));
+                    for (const item of theirs) {
+                      if (item && item[keyProp]) {
+                        const k = item[keyProp];
+                        theirsKeys.add(k);
+                        if (oursMap.has(k)) {
+                          list.push(oursMap.get(k));
+                        } else {
+                          list.push(item);
+                        }
                       } else {
-                        // 官方独有的新 App：收纳保留
-                        list.push(item);
-                      }
-                    } else {
-                      list.push(item);
-                    }
-                  }
-
-                  // 2. 将我方独有的新增 App 追加到列表末尾
-                  for (const item of ours) {
-                    if (item && item[keyProp]) {
-                      const k = item[keyProp];
-                      if (!theirsKeys.has(k)) {
                         list.push(item);
                       }
                     }
+
+                    for (const item of ours) {
+                      if (item && item[keyProp]) {
+                        const k = item[keyProp];
+                        if (!theirsKeys.has(k)) {
+                          list.push(item);
+                        }
+                      }
+                    }
+                    mergedResult = list;
+                  } else if (typeof ours === "object" && typeof theirs === "object" && ours !== null && theirs !== null) {
+                    mergedResult = { ...theirs, ...ours };
+                  } else {
+                    mergedResult = ours || theirs;
                   }
 
-                  mergedResult = list;
-                } else if (typeof ours === 'object' && typeof theirs === 'object' && ours !== null && theirs !== null) {
-                  // 对象/字典格式：上游打底，我方覆盖
-                  mergedResult = { ...theirs, ...ours };
-                } else {
-                  mergedResult = ours || theirs;
-                }
-
-                fs.writeFileSync(targetFile, JSON.stringify(mergedResult, null, 2) + '\n');
-EOF
+                  fs.writeFileSync(targetFile, JSON.stringify(mergedResult, null, 2) + "\n");
+                '
                 git add "$file"
               else
                 echo "Resolving conflict by keeping our version for: $file"
-                # 冲突的图片资源、文档等：如果我方有则保留我方；若我方已删除则保持删除
                 if git checkout --ours -- "$file" 2>/dev/null; then
                   git add "$file"
                 else
@@ -143,5 +126,5 @@ EOF
             git commit -m "chore: auto-sync from upstream with local priority overrides"
           fi
 
-          # 5. 推送到远程 main 分支（使用 HEAD:main 规避游离分支风险）
+          # 5. 推送到远程 main 分支
           git push origin HEAD:main
