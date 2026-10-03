@@ -5048,6 +5048,23 @@
     "overlay": false,
     "contributors": "catsimple"
   },
+  "cn.com.weilaihui3": {
+    "label": {
+      "en": "NIO",
+      "zh-CN": "蔚来"
+    },
+    "format": "png",
+    "color": "#53B5B7",
+    "overlay": false,
+    "contributors": "fankes, ziyucao"
+  },
+  "com.rookery.courier": {
+    "label": "ROOST",
+    "format": "png",
+    "color": "#191C9C",
+    "overlay": false,
+    "contributors": "fankes, Zori9527"
+  },
   "com.smjcco.wxpusher": {
     "label": "WxPusher消息推送平台",
     "format": "png",
