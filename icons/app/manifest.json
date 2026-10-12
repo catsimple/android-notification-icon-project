@@ -5072,6 +5072,11 @@
     "overlay": false,
     "contributors": "fankes, zxygood"
   },
+  "com.ss.android.ugc.live": {
+    "target": "com.ss.android.ugc.aweme",
+    "label": "抖音火山版",
+    "contributors": "Lewis liu"
+  },
   "com.smjcco.wxpusher": {
     "label": "WxPusher消息推送平台",
     "format": "png",
